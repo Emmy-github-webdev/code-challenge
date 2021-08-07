@@ -122,3 +122,33 @@ caesarCipher('Javascript', -900); */
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+/*
+    Is Palindrome
+*/
+
+/* function isPalindrome(string){
+    string = string.toLowerCase();
+    let charactersArr = string.split('');
+    let validCharacters =  'abcdefghijklmnopqrstuvwxyz'.split('');
+
+    let letterArr = [];
+
+    charactersArr.forEach(char => {
+        if(validCharacters.indexOf(char) > -1){
+            letterArr.push(char);
+        }
+    })
+
+    if(letterArr.join('') === letterArr.reverse().join('')){
+        return true;
+    }else {
+        return false;
+    }
+};
+
+//console.log(isPalindrome("Madam I'M Adam"));
+//console.log(isPalindrome("race car"));
+console.log(isPalindrome("Coding Javascript")); */
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
