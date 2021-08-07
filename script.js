@@ -123,7 +123,7 @@ caesarCipher('Javascript', -900); */
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /*
-    Is Palindrome
+  #4  Is Palindrome
 */
 
 /* function isPalindrome(string){
@@ -149,6 +149,34 @@ caesarCipher('Javascript', -900); */
 //console.log(isPalindrome("Madam I'M Adam"));
 //console.log(isPalindrome("race car"));
 console.log(isPalindrome("Coding Javascript")); */
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ #5 Reverse word
+*/
+
+/* function reverseWord(string){
+    string = string.toLowerCase();
+    let wordArr = string.split(' ');
+    let reverseWordArr = [];
+    
+    wordArr.forEach(word => {
+        let reversedWord = '';
+        for(let i = word.length - 1; i >= 0; i--){
+            reversedWord += word[i];
+        }
+
+        reverseWordArr.push(reversedWord);
+    });
+
+    console.log(reverseWordArr.join(' '));
+    
+};
+
+reverseWord('Come home as early as possible'); */
+
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
