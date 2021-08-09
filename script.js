@@ -287,5 +287,27 @@ meanMedianMode([9, 10, 23, 10, 23, 9]);
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /*
- #8 mean, median, mode
+ #8 Between Two Sets
+ use every method to test whether all elements in the array pass the test implemented by the particular function
+*/
+
+/* function getTotalx(a, b){
+    let result = 0;
+
+    for(let i = 1; i <= 100; i++){
+        if(a.every(int => (i % int == 0))){
+            if(b.every(int => (int % i == 0))){
+                result++;
+            }
+        }
+    }
+    //return result;
+    console.log(result);
+}
+
+getTotalx([2, 6], [24, 36]) */
+
+
+/*
+ #9 
 */
