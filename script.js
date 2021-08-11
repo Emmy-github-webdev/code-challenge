@@ -182,7 +182,7 @@ reverseWord('Come home as early as possible'); */
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /*
- #6 Reverse word
+ #6 Reverse Array
 */
 
 /* function reverseArrayInPlace(arr){
@@ -306,8 +306,74 @@ meanMedianMode([9, 10, 23, 10, 23, 9]);
 }
 
 getTotalx([2, 6], [24, 36]) */
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 /*
- #9 
+ #9 Simple Array Sum
+*/
+
+/* function simpleArraySum(ar) {
+    // Write your code here
+    let sum = 0;
+    
+    for (let i = 0; i < ar.length; i++){
+        sum += ar[i];
+    }
+    
+    return sum
+
+} 
+simpleArraySum([2, 5, 6])
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+*/
+
+/*
+ #10 Compare the triplets
+*/
+
+/* function compareTriplets(a, b){
+    let point = [];
+    let alice = 0;
+    let bob = 0;
+
+    for(let i = 0; i < a.length; i++){
+        if(a[i] > b[i]){
+            alice++;
+        }
+        else if (a[i] < b[i]){
+            bob++;
+        }
+    }
+    point =[alice, bob]
+
+    return point;
+};
+console.log(compareTriplets([17, 28, 30], [99, 16, 8])); */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ #11 2D Array - DS
+
+ function hourglassSum(arr) {
+    // Write your code here
+    let max = -9999;
+
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            let sum = arr[i + 1][j + 1];
+            for (let k = 0; k < 3; k++) {
+                sum += arr[i][j + k];
+                sum += arr[i + 2][j + k]
+            }
+            if (sum > max) max = sum;
+        }
+    }
+
+    return max;
+
+}
 */
