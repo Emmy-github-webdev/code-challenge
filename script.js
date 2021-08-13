@@ -377,3 +377,342 @@ console.log(compareTriplets([17, 28, 30], [99, 16, 8])); */
 
 }
 */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/**
+ * #12 - Two sum
+ * 
+ * 
+ */
+/* function twoSum(numArray, sum){
+    let pairs = [];
+    let hashTable = [];
+    for (let i = 0; i < numArray.length; i++){
+        let currNum = numArray[i];
+        let counterpart = sum - currNum;
+        if(hashTable.indexOf(counterpart) != -1){
+            pairs.push([currNum, counterpart]);
+        }
+
+        hashTable.push(currNum);
+    }
+
+    //return pairs;
+    console.log(pairs);
+}
+
+twoSum([1, 6, 4, 5, 3, 3], 7) */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+//Extral knowledge about recursive
+/* function factorial(num){
+    if(num <= 2){
+        return num;
+    }else{
+        return num * factorial(num - 1);
+    }
+
+    
+} 
+
+factorial(4);
+*/
+
+/**
+ * #13 - Binary search - using recursive function
+ * 
+ * 
+ */
+
+/* function binarySearch(numArray, key){
+    let middleIdx = Math.floor(numArray.length) / 2;
+    let middleElem = numArray[middleIdx];
+
+    if(middleElem === key) return true;
+    else if(middleElem < key && numArray.length > 1){
+        return binarySearch(numArray.splice(middleIdx, numArray.length), key);
+    }
+    else if (middleElem > key && numArray.length > 1){
+        return binarySearch(numArray.splice(0, middleIdx), key);
+    }
+
+    else return false;
+
+}
+binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 56); */
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #14 - Fibonacci
+ * 
+ * 
+ */
+
+/* function fibonacci(position){
+    if(position < 3) return 1;
+
+    else return fibonacci(position - 1) + fibonacci(position - 2);
+}
+
+console.log(fibonacci(20)) */
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #14 - Fibonacci using Memoized
+ * 
+ */
+
+/* function fibMemo(index, cache){
+    cache = cache || [];
+    if(cache[index]) return cache[index];
+    else{
+        if(index < 3) return 1;
+        else{
+            cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache);
+        }
+    }
+    return cache[index];
+}
+
+console.log(fibMemo(50));
+ */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #14 - Sieve of Eratosthenes - return all prime numbers up to num in an array
+ * 
+ */
+
+/* function sieveOfEratosthenes (n){
+    let primes = [];
+    for(let i = 0; i <= n; i++){
+        primes[i] = true;
+    }
+
+    primes[0] = false;
+    primes[1] = false;
+    for(let i = 2; i<= Math.sqrt(n); i++){
+        for(let j = 2; j * i <= n; j++){
+            primes[i * j] = false;
+        }
+
+    }
+
+    let result = [];
+
+    for(let i = 0; i <= primes.length; i++){
+        if(primes[i]) result.push(i);
+    }
+
+    //return result;
+    console.log(result)
+}
+sieveOfEratosthenes(20) */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #15 - Bubble Sort - return array, sorted with bubble sort
+ * 
+ */
+
+/* function bubblesort(array){
+    for(let i = array.length; i > 0; i--){
+        for(let j = 0; j < i; j++){
+            if(array[j] > array[j + 1]){
+                let temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+    console.log(array);
+}
+
+bubblesort([20, 3, 8, 2, 1, 4]); */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #16 - Left Rotation
+ * 
+ * 
+ * function rotateLeft(d, arr) {
+  // check if there's even something to rotate
+  if(arr.length < 2) {
+    return arr.slice(0); // always return a copy
+  }
+
+  // get the number of actual rotations to perform
+  var n = d % arr.length;
+
+  // check if there's any need to rotate
+  if(n === 0) {
+    return arr.slice(0); // always return a copy
+  }
+
+  // slice and concat
+  if(n < 0) {
+    return arr.slice(n).concat(arr.slice(0, arr.length+n));
+  } else {
+    return arr.slice(n).concat(arr.slice(0, n));
+  }
+}
+ */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #17 - Sparse Arrays
+ * 
+ * 
+ * function matchingStrings(strings, queries) {
+    // Write your code here
+
+let result=[];
+    let counts={};
+    
+    for (let str of strings) 
+    counts[str] = counts[str] ? counts[str] + 1 : 1;
+    
+    for(let i=0;i<queries.length;i++)
+    if(counts.hasOwnProperty(queries[i]))
+    result.push(counts[queries[i]]);
+    else
+     result.push(0);
+    
+    return result;
+}
+ */
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #18 - Array Manipulation
+ * 
+ * 
+ * 
+function arrayManipulation(n, queries) {
+    // Write your code here
+    
+    let max = 0;
+    const params = [];
+    
+    for(let q=0; q<queries.length; q++){
+        
+        const query = queries[q];
+        const qstart = query[0];
+        const qend = query[1];
+        const qval = query[2];
+        
+        params.push({
+            key: qstart,
+            val: qval
+        });
+        
+        params.push({
+            key: qend,
+            val: -qval
+        });
+    }
+    
+    //sort the parameters by key
+    params.sort((item1, item2) => {
+        if(item1.key === item2. key){
+            return item2.val - item1.val;
+        }
+        
+        return item1.key - item2.key;
+    });
+    
+    let sum = 0;
+    
+    for(let i=0; i<params.length; i++){
+        const param = params[i];
+        sum += param.val;
+        
+        if(sum > max){
+            max = sum;
+        }
+    }
+
+    return max;
+
+}
+
+ */
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #19 - Array Manipulation
+ * 
+ * 
+ * function componentsInGraph(gb) {
+    // establish array of n * 2 to represent nodes
+    const arr = new Array(gb.length * 2 + 1).fill(-1); // -1 = not connected
+    function relabel(oldLabel, newLabel){
+        for(let i = 1; i < arr.length; i++){
+            if(arr[i]===oldLabel) arr[i] = newLabel;
+        }
+    }
+
+    let label = 1;
+    for(const [nodeG, nodeB] of gb){
+        if(arr[nodeG] < 0){
+            arr[nodeG] = label;
+        }else{
+            relabel(arr[nodeG], label);
+        }
+
+        if(arr[nodeB] < 0){
+            arr[nodeB] = label;
+        }else{
+            relabel(arr[nodeB], label);
+        }
+
+        label++;
+    }
+    // hash count and establish min/max
+    const counts = {};
+    for(const num of arr){
+        if(num < 0) continue; // skip unconnected
+        counts[num] = (counts[num] || 0) + 1;
+    }
+    
+    // return min/max
+    return [Math.min(...Object.values(counts)), Math.max(...Object.values(counts))];
+}
+ * /
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/**
+ * #16 - merge Sort
+ * 
+ */
+
+/* function mergeSort(arr){
+    if(arr.length < 2) return arr;
+
+    let middleIndex = Math.floor(arr,length / 2);
+    let firstHalf = arr.slice(0, middleIndex);
+    let secondHalf = arr.slice(middleIndex);
+
+}
+
+function merge (array1, array2){
+    let result = [];
+
+    while (array1.length && array2.length){
+        let minElem;
+        if(array1[0] < array2[0]) minElem = array1.shift();
+        else minElem = array2.shift();
+        result.push(minElem);
+    }
+
+} */
+
+ 
