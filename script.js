@@ -715,4 +715,99 @@ function merge (array1, array2){
 
 } */
 
- 
+/*
+There are m users with ids from 0 to m - 1 and q requests for the short URLs. For each request i, 
+report the actual URL and the number of requests processed for user who created the short URL till the 
+i-th request. Given an array of n strings, database, where the ith row is represented by the string database[i] 
+in the format "<user_id><short_url><actual_url>", and q queries, for each requested shortURL, report an array of strings of 
+
+function getStartedForRequests(m, database, requests) {
+  const userRequests = new Array(m).fill(0); // Initialize request counts for each user to 0
+  const urlMappings = {};
+
+  const results = [];
+
+  // Process the database and populate user requests and URL mappings
+  for (const entry of database) {
+    const [userID, shortURL, actualURL] = entry.split(" ");
+    const user = parseInt(userID);
+
+    // Create the full short URL with user-specific prefix
+    const fullShortURL = `http://short.url/${userID}${shortURL}`;
+
+    // Update user request count and URL mappings
+    userRequests[user]++;
+    urlMappings[fullShortURL] = actualURL;
+  }
+
+  // Process the requests and generate results
+  for (let i = 0; i < requests.length; i++) {
+    const shortURL = requests[i];
+    const actualURL = urlMappings[shortURL] || "Short URL not found";
+    const userID = parseInt(shortURL.split(" ")[0]);
+    const requestsProcessed = userRequests[userID] || 0;
+
+    results.push([actualURL, requestsProcessed]);
+  }
+
+  return results;
+}
+
+// Example usage:
+const m = 3; // Number of users
+const database = [
+  "0 abc https://example.com/page1",
+  "1 def https://example.com/page2",
+  "0 ghi https://example.com/page3",
+];
+
+const requests = ["0 abc", "1 def", "0 ghi", "2 jkl"];
+
+const results = getStartedForRequests(m, database, requests);
+console.log(results);
+length 2 with the actual URL and the number of times a request is made using a short URL created by a particular user. 
+*/
+
+
+/*
+In this task, a basic prototype service for detecting the word type by a user by swiping the finger 
+from the key to key on the keyboard, more popular know as glide typing, is to be implemented. 
+A user usually intends to type a subsequence
+of the characters they swiped over. 
+
+function findSmallestSubsequence(s, dictionary) {
+  dictionary.sort(); // Sort the dictionary lexicographically
+
+  let result = "";
+  for (const word of dictionary) {
+    let i = 0;
+    let j = 0;
+    const wordLength = word.length;
+    const sLength = s.length;
+
+    while (i < wordLength && j < sLength) {
+      if (word[i] === s[j]) {
+        i++;
+      }
+      j++;
+    }
+
+    if (i === wordLength) {
+      // If the entire word is found as a subsequence
+      if (result === "" || word < result) {
+        result = word;
+      }
+    }
+  }
+
+  return result;
+}
+
+// Example usage:
+const s = "abppplee";
+const dictionary = ["able", "ale", "apple", "bale", "kangaroo"];
+
+const smallestSubsequence = findSmallestSubsequence(s, dictionary);
+console.log(smallestSubsequence); // Output: "ale"
+
+*/
